@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Button from "./Button";
 import Image from "next/image";
@@ -41,29 +41,27 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-      {/* Desktop Navigation */}
-<div
-  className={`hidden items-center justify-center gap-4 rounded-xl px-10 py-2 shadow-md backdrop-blur-md transition-colors duration-300 lg:flex ${
-    isScrolled
-      ? "bg-[#123D24]/95"
-      : "bg-[#123D24]/70"
-  }`}
->
-  <ul className="flex gap-10">
-    {navLinks.map((link) => (
-      <li key={link.href} className="group">
-        <Link
-          href={link.href}
-          className="font-medium text-white transition-colors duration-300 hover:text-[var(--yellow)]"
+        {/* Desktop Navigation */}
+        <div
+          className={`hidden items-center justify-center gap-4 rounded-xl px-10 py-2 shadow-md backdrop-blur-md transition-colors duration-300 lg:flex ${
+            isScrolled ? "bg-[#123D24]/50" : "bg-[#123D24]/40"
+          }`}
         >
-          {link.name}
-        </Link>
+          <ul className="flex gap-10">
+            {navLinks.map((link) => (
+              <li key={link.href} className="group">
+                <Link
+                  href={link.href}
+                  className="font-medium text-white transition-colors duration-300 hover:text-[var(--yellow)]"
+                >
+                  {link.name}
+                </Link>
 
-        <span className="block h-0.5 w-0 bg-[var(--yellow)] transition-all duration-300 ease-in-out group-hover:w-full" />
-      </li>
-    ))}
-  </ul>
-</div>
+                <span className="block h-0.5 w-0 bg-[var(--yellow)] transition-all duration-300 ease-in-out group-hover:w-full" />
+              </li>
+            ))}
+          </ul>
+        </div>
         {/* Desktop CTA */}
         <div className="hidden lg:block">
           <Link href="/contact-us">

@@ -71,14 +71,8 @@ export default function LegalPageShell({
           aria-hidden="true"
           className="pointer-events-none absolute -bottom-52 -left-40 h-[330px] w-[330px] rounded-full border-[60px] border-[#A8E629]/10"
         />
-        <div className="relative mx-auto max-w-[1250px] px-5 pb-20 pt-12 sm:px-8 sm:pb-24 sm:pt-16 lg:px-12 lg:pt-20">
-          <nav aria-label="Breadcrumb" className="mb-10 flex items-center gap-2 text-xs font-medium text-white/70 sm:text-sm">
-            <Link href="/" className="transition-colors hover:text-[#F5D91D]">
-              Home
-            </Link>
-            <ChevronRight size={15} aria-hidden="true" />
-            <span className="text-[#F5D91D]">{title}</span>
-          </nav>
+        <div className="relative mx-auto max-w-[1250px] px-5 pb-20 pt-20 sm:px-8 sm:pb-24 sm:pt-20 lg:px-12 lg:pt-23">
+          
 
           <div className="flex items-center justify-between gap-8">
             <div className="max-w-[760px]">
