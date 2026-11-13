@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Link from "next/link";
 import Button from "./Button";
 import Image from "next/image";
@@ -8,7 +8,16 @@ import { ArrowRight, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 30);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Our Product", href: "/our-product" },
@@ -22,7 +31,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link href="/" onClick={() => setIsMenuOpen(false)}>
           <Image
-            className="h-16 w-16 object-contain lg:h-20 lg:w-20"
+            className="h-auto w-16 object-contain lg:h-20 lg:w-20"
             src="/logo.png"
             alt="Noo Stop Logo"
             width={100}
@@ -32,17 +41,29 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center justify-center gap-4 rounded-xl bg-white/10 px-10 py-2 shadow-md backdrop-blur-md lg:flex">
-          <ul className="flex gap-10">
-            {navLinks.map((link) => (
-              <li key={link.href} className="group text-white">
-                <Link href={link.href}>{link.name}</Link>
-                <span className="block h-0.5 w-0 bg-[var(--yellow)] transition-all duration-300 ease-in group-hover:w-full" />
-              </li>
-            ))}
-          </ul>
-        </div>
+      {/* Desktop Navigation */}
+<div
+  className={`hidden items-center justify-center gap-4 rounded-xl px-10 py-2 shadow-md backdrop-blur-md transition-colors duration-300 lg:flex ${
+    isScrolled
+      ? "bg-[#123D24]/95"
+      : "bg-[#123D24]/70"
+  }`}
+>
+  <ul className="flex gap-10">
+    {navLinks.map((link) => (
+      <li key={link.href} className="group">
+        <Link
+          href={link.href}
+          className="font-medium text-white transition-colors duration-300 hover:text-[var(--yellow)]"
+        >
+          {link.name}
+        </Link>
 
+        <span className="block h-0.5 w-0 bg-[var(--yellow)] transition-all duration-300 ease-in-out group-hover:w-full" />
+      </li>
+    ))}
+  </ul>
+</div>
         {/* Desktop CTA */}
         <div className="hidden lg:block">
           <Link href="/contact-us">
@@ -99,7 +120,7 @@ const Navbar = () => {
 
           {/* Mobile CTA */}
           <Link
-            href="/contact"
+            href="/contact-us"
             onClick={() => setIsMenuOpen(false)}
             className="group flex w-fit items-center justify-center gap-2 rounded-xl bg-[var(--button-primary)] px-5 py-3 text-sm font-semibold text-black transition-all duration-300 hover:bg-[var(--lime)]"
           >

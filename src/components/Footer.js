@@ -1,13 +1,9 @@
-
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig, getWhatsAppURL } from "@/lib/config/site";
-import {
-  FaWhatsapp,
-  FaInstagram,
-  FaFacebookF,
-} from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaFacebookF ,FaYoutube } from "react-icons/fa";
 
 const footerLinks = [
   { name: "Home", href: "/" },
@@ -15,10 +11,16 @@ const footerLinks = [
   { name: "About", href: "/about-us" },
   { name: "Contact", href: "/contact-us" },
   { name: "Privacy Policy", href: "/privacy-policy" },
-  { name: "Terms", href: "/terms-and-conditions" },
+  { name: "Terms", href: "/terms-of-service" },
 ];
 
 const Footer = () => {
+  const [currentYear, setCurrentYear] = useState(null);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   const socialLinks = [
     {
       name: "WhatsApp",
@@ -35,15 +37,18 @@ const Footer = () => {
       href: siteConfig.Socials.Facebook,
       icon: FaFacebookF,
     },
+    {
+      name: "YouTube",
+      href: siteConfig.Socials.YouTube,
+      icon: FaYoutube,
+    },
   ].filter((social) => social.href && social.href !== "#");
 
   return (
     <footer className="w-full bg-[var(--primary)] text-white">
       <div className="mx-auto max-w-[1400px] px-5 py-8 sm:px-8 md:px-10 md:py-7 lg:px-12 lg:py-6">
-
         {/* TOP CONTENT */}
         <div className="grid grid-cols-1 items-center gap-7 md:grid-cols-[1fr_auto] md:gap-y-6 lg:grid-cols-[auto_1fr_auto_auto] lg:gap-6">
-
           {/* Logo */}
           <Link
             href="/"
@@ -96,18 +101,16 @@ const Footer = () => {
 
           {/* Copyright - Desktop */}
           <p className="hidden whitespace-nowrap text-xs text-white/65 lg:block">
-            © {new Date().getFullYear()} Noo Stop.
+            © {currentYear} Noo Stop.
           </p>
-
         </div>
 
         {/* BOTTOM DIVIDER */}
         <div className="mt-7 border-t border-white/15 pt-5 md:mt-6 lg:hidden">
           <p className="text-center text-xs text-white/65">
-            © {new Date().getFullYear()} Noo Stop. All rights reserved.
+            © {currentYear} Noo Stop. All rights reserved.
           </p>
         </div>
-
       </div>
     </footer>
   );

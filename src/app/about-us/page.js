@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CurvedBrush from "@/components/Curved_brush";
+import { siteConfig } from "@/lib/config/site";
 import {
   ArrowRight,
   Flag,
@@ -11,7 +12,83 @@ import {
   UsersRound,
   Handshake,
 } from "lucide-react";
+export const metadata = {
+  title: "About Us – Our Story, Vision & Values",
 
+  description:
+    "Learn about Noo Stop, an emerging Indian beverage brand. Discover our story, vision and commitment to bringing refreshing zeera-flavoured experiences.",
+
+  alternates: {
+    canonical: "/about-us",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "/about-us",
+    siteName: siteConfig.BrandName,
+    title: "About Noo Stop – Our Story & Vision",
+    description:
+      "Get to know Noo Stop, our brand story, vision and values behind the refreshing Noo Stop Zeera beverage.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "About Noo Stop – Our Story and Vision",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "About Noo Stop – Our Story & Vision",
+    description:
+      "Discover the story, vision and values behind Noo Stop, an emerging Indian beverage brand.",
+    images: ["/og-image.png"],
+  },
+};
+const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+).replace(/\/$/, "");
+
+const aboutJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": `${siteUrl}/about-us#webpage`,
+      name: "About Noo Stop – Our Story, Vision & Values",
+      url: `${siteUrl}/about-us`,
+      description:
+        "Learn about Noo Stop, our brand story, vision and values behind our refreshing fizzy zeera-flavoured beverage.",
+      isPartOf: {
+        "@id": `${siteUrl}/#website`,
+      },
+      about: {
+        "@id": `${siteUrl}/#organization`,
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${siteUrl}/about-us#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${siteUrl}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "About Us",
+          item: `${siteUrl}/about-us`,
+        },
+      ],
+    },
+  ],
+};
 const values = [
   {
     title: "Refreshment",
@@ -33,7 +110,18 @@ const values = [
 
 const Page = () => {
   return (
+    <>
+     <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aboutJsonLd).replace(
+            /</g,
+            "\\u003c",
+          ),
+        }}
+      />
     <main className="w-full overflow-hidden ">
+     
       {/* =========================================
           1. ABOUT US HERO
       ========================================= */}
@@ -181,9 +269,7 @@ const Page = () => {
               </h2>
 
               <p className="max-w-[690px] text-sm leading-relaxed text-white/95 md:text-base lg:text-lg">
-                Our vision is to build a recognizable beverage brand that brings
-                refreshing experiences to consumers and creates opportunities
-                for retailers and distribution partners.
+                {siteConfig?.Vision}
               </p>
             </div>
           </div>
@@ -329,6 +415,7 @@ const Page = () => {
         </div>
       </section>
     </main>
+    </>
   );
 };
 
