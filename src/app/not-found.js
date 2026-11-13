@@ -9,7 +9,7 @@ export default function NotFound() {
     <main className="relative isolate min-h-screen w-full overflow-hidden bg-[#003D16]">
       {/* DESKTOP BACKGROUND ONLY */}
       <Image
-        src="/404.png"
+        src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/404.png"
         alt="Noo Stop Zeera 404 background"
         fill
         priority
@@ -31,7 +31,7 @@ export default function NotFound() {
 
         {/* Decorative Leaf - Top Right */}
         <Image
-          src="/leaves.png"
+          src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/fresh-green-leaves-water-drops.png"
           alt=""
           width={280}
           height={280}
@@ -41,7 +41,7 @@ export default function NotFound() {
 
         {/* Decorative Leaf - Bottom Left */}
         <Image
-          src="/leaves.png"
+          src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/fresh-green-leaves-water-drops.png"
           alt=""
           width={280}
           height={280}

@@ -22,7 +22,7 @@ export const metadata = {
       "Have questions about Noo Stop Zeera? Reach our team for customer support, product enquiries, feedback and business opportunities.",
     images: [
       {
-        url: "/our-product/image2.png",
+        url: "/og-image.png",
         alt: "Contact Noo Stop – Customer Support and Enquiries",
       },
     ],
@@ -33,7 +33,7 @@ export const metadata = {
     title: "Contact Noo Stop – We're Here to Help",
     description:
       "Get in touch with the Noo Stop team for product enquiries, customer support and business partnerships.",
-    images: ["/our-product/image2.png"],
+    images: ["/og-image.png"],
   },
 };
 

@@ -37,7 +37,7 @@ export const metadata = {
       "Discover Noo Stop Zeera, a fizzy cumin-flavoured beverage bringing a refreshing twist to everyday moments.",
     images: [
       {
-        url: "/hero.png",
+        url: "/og-image.png",
         alt: "Noo Stop Zeera – Fizzy Cumin-Flavoured Drink",
       },
     ],
@@ -48,7 +48,7 @@ export const metadata = {
     title: "Noo Stop – A Refreshing Twist of Zeera",
     description:
       "Meet Noo Stop Zeera, a refreshing fizzy zeera drink crafted for everyday moments.",
-    images: ["/hero.png"],
+    images: ["/og-image.png"],
   },
 };
 const homeJsonLd = {
@@ -107,7 +107,7 @@ export default function Home() {
         <section className="relative w-full overflow-hidden lg:h-[580px]">
           {/* Desktop Image */}
           <Image
-            src="/hero.png"
+            src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/hero.png"
             alt="Noo Stop Zeera"
             width={1920}
             height={1080}
@@ -118,7 +118,7 @@ export default function Home() {
 
           {/* Mobile + Tablet Image */}
           <Image
-            src="/home/mobile-hero.png"
+            src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/mobile-hero.png"
             alt="Noo Stop Zeera"
             width={1920}
             height={1080}
@@ -221,7 +221,7 @@ export default function Home() {
               </h2>
 
               <p className="w-full max-w-[500px] text-sm leading-relaxed text-gray-600 sm:text-base md:w-full md:text-sm lg:w-[80%] lg:text-base">
-                Noo Stop is more than just a drink — it's a refreshing break in
+                Noo Stop is more than just a drink — it&apos;s a refreshing break in
                 your busy day. With the perfect blend of fizzy freshness and
                 zeera flavour, Noo Stop brings joy in every sip.
               </p>
@@ -266,7 +266,7 @@ export default function Home() {
             </svg>
 
             <Image
-              src="/home2.png"
+              src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/noo-stop-zeera-drink-glass.png"
               alt="Noo Stop Zeera refreshing drink"
               width={1000}
               height={1000}
@@ -281,8 +281,8 @@ export default function Home() {
             {/* Background */}
             <Image
               className=" w-full md:w-[100vw] h-auto"
-              src="/home4.png"
-              alt="Home Image"
+              src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/noo-stop-zeera-bottle-splash.png"
+              alt="noo-stop-zeera-bottle-splash"
               width={1000}
               height={1000}
               loading="eager"
@@ -457,7 +457,7 @@ export default function Home() {
           {/* RIGHT STORE IMAGE */}
           <div className="relative flex w-full right-16 top-6 md:top-0 md:right-0 items-end justify-center overflow-visible pt-5 md:w-[25%] md:justify-end md:pt-0 lg:w-[20%]">
             <Image
-              src="/home/store.png"
+              src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/store.png"
               alt="Noo Stop retail partnership store"
               width={400}
               height={400}

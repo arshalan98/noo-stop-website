@@ -14,13 +14,13 @@ export const metadata = {
     title: "Terms of Service | Noo Stop",
     description:
       "Understand the terms for using Noo Stop's informational website and contacting our team.",
-    images: [{ url: "/hero.png", alt: "Noo Stop" }],
+    images: [{ url: "/og-image.png", alt: "Noo Stop" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Terms of Service | Noo Stop",
     description: "Important information about using the Noo Stop website.",
-    images: ["/hero.png"],
+    images: ["/og-image.png"],
   },
 };
 

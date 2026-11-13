@@ -14,14 +14,14 @@ export const metadata = {
     title: "Privacy Policy | Noo Stop",
     description:
       "Learn how Noo Stop handles contact enquiries through WhatsApp and protects your privacy.",
-    images: [{ url: "/hero.png", alt: "Noo Stop" }],
+    images: [{ url: "/og-image.png", alt: "Noo Stop" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Privacy Policy | Noo Stop",
     description:
       "Our approach to privacy, contact enquiries and WhatsApp communication.",
-    images: ["/hero.png"],
+    images: ["/og-image.png"],
   },
 };
 

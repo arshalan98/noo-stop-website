@@ -25,7 +25,7 @@ export const metadata = {
       "Meet Noo Stop Zeera, a 160 ml carbonated cumin-flavoured beverage. Explore its refreshing taste, product information and packaging.",
     images: [
       {
-        url: "/our-product/image2.png",
+        url: "/og-image.png",
         alt: "Noo Stop Zeera – Fizzy Cumin-Flavoured Beverage",
       },
     ],
@@ -36,7 +36,7 @@ export const metadata = {
     title: "Noo Stop Zeera – Fizzy Cumin-Flavoured Drink",
     description:
       "Discover the refreshing taste of Noo Stop Zeera, a 160 ml fizzy cumin-flavoured beverage.",
-    images: ["/our-product/image2.png"],
+    images: ["/og-image.png"],
   },
 };
 
@@ -122,6 +122,16 @@ const productJsonLd = {
   ],
 };
 
+const nutritionRows = [
+  { label: "Energy (kcal)", key: "Energy" },
+  { label: "Fat (g)", key: "Fat" },
+  { label: "Carbohydrates (g)", key: "Carbohydrates" },
+  { label: "Total Sugars (g)", key: "TotalSugars" },
+  { label: "Added Sugars (g)", key: "AddedSugars" },
+  { label: "Protein (g)", key: "Protein" },
+  { label: "Sodium (mg)", key: "Sodium" },
+];
+
 const page = () => {
   return (
     <>
@@ -135,7 +145,7 @@ const page = () => {
         <section className="relative w-full overflow-hidden lg:h-[580px]">
           {/* Desktop Background */}
           <Image
-            src="/our-product/image2.png"
+            src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/noo-stop-zeera-product-hero.png"
             alt="Noo Stop Zeera"
             width={1920}
             height={1080}
@@ -146,7 +156,7 @@ const page = () => {
 
           {/* Mobile + Tablet Background */}
           <Image
-            src="/home/mobile-hero.png"
+            src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/mobile-hero.png"
             alt="Noo Stop Zeera"
             width={1920}
             height={1080}
@@ -293,12 +303,14 @@ const page = () => {
                   </h3>
 
                   <p className="text-sm leading-relaxed text-gray-600">
-                    To be updated from the official product label.
+                    {siteConfig.Product.Ingredients.length > 0
+                      ? siteConfig.Product.Ingredients.join(", ") + "."
+                      : "Ingredients information coming soon."}
                   </p>
                 </div>
 
                 <Image
-                  src="/our-product/zeera-leaf.png"
+                  src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/zeera-with-leaf.png"
                   alt="Zeera seeds and green leaf"
                   width={500}
                   height={500}
@@ -327,30 +339,30 @@ const page = () => {
                         <th className="border-b border-r border-[#123D24]/15 px-3 py-3">
                           Nutrient
                         </th>
-                        <th className="border-b border-[#123D24]/15 px-3 py-3 text-center">
+                        <th className="border-b border-r border-[#123D24]/15 px-3 py-3 text-center">
                           Per 100 ml
+                        </th>
+                        <th className="border-b border-[#123D24]/15 px-3 py-3 text-center">
+                          Per 160 ml
                         </th>
                       </tr>
                     </thead>
 
                     <tbody className="bg-white/40 text-[#374151]">
-                      {[
-                        "Energy",
-                        "Fat",
-                        "Carbohydrates",
-                        "Total Sugars",
-                        "Added Sugars",
-                        "Protein",
-                        "Sodium",
-                      ].map((nutrient) => (
+                      {nutritionRows.map(({ label, key }) => (
                         <tr
-                          key={nutrient}
+                          key={key}
                           className="border-b border-[#123D24]/10 last:border-b-0"
                         >
                           <td className="border-r border-[#123D24]/10 px-3 py-2">
-                            {nutrient}
+                            {label}
                           </td>
-                          <td className="px-3 py-2 text-center">—</td>
+                          <td className="border-r border-[#123D24]/10 px-3 py-2 text-center">
+                            {siteConfig.Product.Nutrition.Per100ml[key]}
+                          </td>
+                          <td className="px-3 py-2 text-center">
+                            {siteConfig.Product.Nutrition.PerServing[key]}
+                          </td>
                         </tr>
                       ))}
                     </tbody>
@@ -374,7 +386,7 @@ const page = () => {
                 {/* Front View */}
                 <div className="flex flex-col items-center justify-between rounded-xl border border-[#123D24]/15 bg-white/40 px-2 pt-4 pb-2">
                   <Image
-                    src="/our-product/bottle-sample-front.png"
+                    src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/noo-stop-zeera-bottle-cutout.png"
                     alt="Noo Stop Zeera Bottle Front View"
                     width={300}
                     height={400}
@@ -390,7 +402,7 @@ const page = () => {
                 {/* Back View */}
                 <div className="flex flex-col items-center justify-between rounded-xl border border-[#123D24]/15 bg-white/40 px-2 pt-4 pb-2">
                   <Image
-                    src="/our-product/bottle-sample-front.png"
+                    src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/Noo_Stop_Zeera_Back_label_Bottle.png"
                     alt="Noo Stop Zeera Bottle Back View Placeholder"
                     width={300}
                     height={400}
@@ -408,20 +420,97 @@ const page = () => {
         </section>
 
         {/* MANUFACTURER INFORMATION */}
-        <section className="w-full px-4 pt-8 pb-12 md:px-8 lg:px-12">
-          <div className="mx-auto max-w-[1200px]">
-            <h2 className="mb-2 inline-block rounded-full bg-gradient-to-r from-[#123D24] to-[#218A35] px-6 py-2 text-lg font-bold text-white">
-              Manufacturer Information
-            </h2>
+    
+{/* MANUFACTURER & MARKETER INFORMATION */}
+<section className="w-full px-4 pt-8 pb-12 md:px-8 lg:px-12">
+  <div className="mx-auto max-w-[1200px]">
+    <h2 className="mb-4 inline-block rounded-full bg-gradient-to-r from-[#123D24] to-[#218A35] px-6 py-2 text-lg font-bold text-white">
+      Manufacturer Information
+    </h2>
 
-            <div className="rounded-xl bg-[#F8F5E7] p-5 md:p-6">
-              <p className="text-sm leading-relaxed text-gray-600">
-                Manufacturer name, address and FSSAI licence details will be
-                updated according to the official product label.
-              </p>
-            </div>
-          </div>
-        </section>
+    <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+      {/* Manufacturer */}
+      <div className="rounded-xl border border-[#123D24]/10 bg-[#F8F5E7] p-5 md:p-6">
+        <h3 className="mb-4 text-lg font-bold text-[#123D24]">
+          Manufactured By
+        </h3>
+
+        <div className="space-y-3 text-sm leading-relaxed">
+          <p className="font-bold text-[#218A35]">
+            {siteConfig?.Business?.Manufacturer?.Name}
+          </p>
+
+          <p className="text-gray-600">
+            {siteConfig?.Business?.Manufacturer?.Address}
+          </p>
+
+          <p className="text-gray-600">
+            <span className="font-semibold text-[#123D24]">
+              FSSAI Licence:
+            </span>{" "}
+            {siteConfig.Business.Manufacturer.FSSAILicense}
+          </p>
+
+          <p className="break-all text-gray-600">
+            <span className="font-semibold text-[#123D24]">
+              Email:
+            </span>{" "}
+            <a
+              href={`mailto:${siteConfig?.Business?.Manufacturer?.Email}`}
+              className="hover:text-[#218A35] hover:underline"
+            >
+              {siteConfig?.Business?.Manufacturer?.Email}
+            </a>
+          </p>
+
+          <p className="text-gray-600">
+            <span className="font-semibold text-[#123D24]">
+              Customer Care:
+            </span>{" "}
+            {siteConfig?.Business?.Manufacturer?.CustomerCare}
+          </p>
+        </div>
+      </div>
+
+      {/* Marketer */}
+      <div className="rounded-xl border border-[#123D24]/10 bg-[#F8F5E7] p-5 md:p-6">
+        <h3 className="mb-4 text-lg font-bold text-[#123D24]">
+          Marketed By
+        </h3>
+
+        <div className="space-y-3 text-sm leading-relaxed">
+          <p className="font-bold text-[#218A35]">
+            {siteConfig?.Business?.MarketedBy?.Name}
+          </p>
+
+          <p className="text-gray-600">
+            {siteConfig?.Business?.MarketedBy?.Address}
+          </p>
+
+          <p className="break-all text-gray-600">
+            <span className="font-semibold text-[#123D24]">
+              Email:
+            </span>{" "}
+            <a
+              href={`mailto:${siteConfig?.Business?.MarketedBy?.Email}`}
+              className="hover:text-[#218A35] hover:underline"
+            >
+              {siteConfig?.Business?.MarketedBy?.Email}
+            </a>
+          </p>
+
+          <p className="text-gray-600">
+            <span className="font-semibold text-[#123D24]">
+              Contact:
+            </span>{" "}
+            {siteConfig?.Business?.MarketedBy?.Phone}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         <section className="w-full px-4 py-0 md:px-8 lg:px-12 overflow-hidden mb-5 ">
           <div className="mx-auto max-w-[1200px] overflow-hidden rounded-[28px] bg-gradient-to-r from-[#1B7F23] via-[#0D5D19] to-[#063E12] shadow-lg">
@@ -429,7 +518,7 @@ const page = () => {
               {/* LEFT IMAGE */}
               <div className="flex w-full justify-start lg:w-auto  ">
                 <Image
-                  src="/our-product/image4.png"
+                  src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/noo-stop-zeera-footer-cta-splash.png"
                   alt="Noo Stop Zeera Bottle Splash"
                   width={320}
                   height={220}

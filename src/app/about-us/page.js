@@ -128,7 +128,7 @@ const Page = () => {
       <section className="relative w-full overflow-hidden lg:h-[580px]">
         {/* Desktop Background */}
         <Image
-          src="/our-product/image2.png"
+          src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/noo-stop-zeera-product-hero.png"
           alt="Noo Stop About Us"
           width={1920}
           height={1080}
@@ -139,7 +139,7 @@ const Page = () => {
 
         {/* Mobile + Tablet Background */}
         <Image
-          src="/home/mobile-hero.png"
+          src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/mobile-hero.png"
           alt="Noo Stop About Us"
           width={1920}
           height={1080}
@@ -217,7 +217,7 @@ const Page = () => {
             <div className=" " />
 
             <Image
-              src="/home2.png"
+              src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/noo-stop-zeera-drink-glass.png"
               alt="Noo Stop Zeera refreshing drink"
               width={850}
               height={650}
@@ -233,9 +233,9 @@ const Page = () => {
       ========================================= */}
       <section className="w-full px-4 py-5 md:px-8 lg:px-12">
         <div className="relative mx-auto max-w-[1250px] overflow-hidden rounded-[24px] bg-gradient-to-r from-[#064A1D] via-[#087022] to-[#024014] text-white">
-          {/* Decorative leaves */}
+          {/* Decorative fresh-green-leaves-water-drops */}
           <Image
-            src="/leaves.png"
+            src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/fresh-green-leaves-water-drops.png"
             alt=""
             width={350}
             height={350}
@@ -283,7 +283,7 @@ const Page = () => {
       <section className="relative w-full overflow-hidden">
         {/* Background Image */}
         <Image
-          src="/about/image1.png"
+          src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/Noo_Stop_Zeera_Lime_Splash.png"
           alt="Introducing Noo Stop Zeera"
           width={1000}
           height={1000}
@@ -372,9 +372,9 @@ const Page = () => {
       ========================================= */}
       <section className="w-full px-4 pt-0 pb-10 md:px-8 lg:px-12">
         <div className="relative mx-auto max-w-[1250px] overflow-hidden rounded-[26px] bg-gradient-to-r from-[#116B20] via-[#0C571A] to-[#064014]">
-          {/* Left decorative leaves */}
+          {/* Left decorative fresh-green-leaves-water-drops */}
           <Image
-            src="/leaves.png"
+            src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/fresh-green-leaves-water-drops.png"
             alt=""
             width={300}
             height={300}
@@ -382,9 +382,9 @@ const Page = () => {
             className="pointer-events-none absolute -bottom-20 -left-14 h-auto w-[170px] rotate-[-20deg] md:w-[240px]"
           />
 
-          {/* Right decorative leaves */}
+          {/* Right decorative fresh-green-leaves-water-drops */}
           <Image
-            src="/leaves.png"
+            src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/fresh-green-leaves-water-drops.png"
             alt=""
             width={300}
             height={300}

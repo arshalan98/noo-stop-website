@@ -45,7 +45,7 @@ export const metadata = {
     description: siteConfig.Description,
     images: [
       {
-        url: "/hero.png",
+        url: "/og-image.png",
         alt: siteConfig.ProductName,
       },
     ],
@@ -55,7 +55,7 @@ export const metadata = {
     card: "summary_large_image",
     title: `${siteConfig.BrandName} | ${siteConfig.Tagline}`,
     description: siteConfig.Description,
-    images: ["/hero.png"],
+    images: ["/og-image.png"],
   },
 
   robots: {

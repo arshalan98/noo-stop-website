@@ -94,7 +94,7 @@ ${message}`;
       <section className="relative w-full overflow-hidden lg:h-[580px]">
         {/* Desktop Background */}
         <Image
-          src="/our-product/image2.png"
+          src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/noo-stop-zeera-product-hero.png"
           alt="Noo Stop Contact Us"
           width={1920}
           height={1080}
@@ -105,7 +105,7 @@ ${message}`;
 
         {/* Mobile + Tablet Background */}
         <Image
-          src="/home/mobile-hero.png"
+          src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/mobile-hero.png"
           alt="Noo Stop Contact Us"
           width={1920}
           height={1080}
@@ -420,7 +420,7 @@ ${message}`;
           <div className="relative h-[550px] md:h-[1050px] lg:h-full w-full overflow-hidden rounded-[24px] bg-[#07551B]">
             {/* Background Image */}
             <Image
-              src="/zeera-glass.png"
+              src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/noo-stop-zeera-fizzy-drink-mobile.png"
               alt="Refreshing Noo Stop Zeera drink"
               fill
               sizes="(max-width: 1023px) 100vw, 40vw"
@@ -498,7 +498,7 @@ ${message}`;
           {/* Bottle Splash Image */}
           <div className="flex w-full justify-start lg:w-auto  ">
             <Image
-              src="/our-product/image4.png"
+              src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/noo-stop-zeera-footer-cta-splash.png"
               alt="Noo Stop Zeera Bottle Splash"
               width={1000}
               height={1000}
