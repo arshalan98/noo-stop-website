@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/config/site";
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 ).replace(/\/$/, "");
-const ogImageUrl = new URL("/og-image.png", siteUrl).toString();
+const ogImageUrl = new URL("/og-image.jpg", siteUrl).toString();
 
 export const metadata = {
   title: "Terms of Service",
@@ -21,9 +21,9 @@ export const metadata = {
       "Understand the terms for using Noo Stop's informational website and contacting our team.",
     images: [{
       url: ogImageUrl,
-      width: 1200,
-      height: 630,
-      type: "image/png",
+      width: 1731,
+      height: 909,
+      type: "image/jpeg",
       alt: "Noo Stop",
     }],
   },

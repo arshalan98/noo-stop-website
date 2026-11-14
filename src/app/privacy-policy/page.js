@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/config/site";
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 ).replace(/\/$/, "");
-const ogImageUrl = new URL("/og-image.png", siteUrl).toString();
+const ogImageUrl = new URL("/og-image.jpg", siteUrl).toString();
 
 export const metadata = {
   title: "Privacy Policy",
@@ -21,9 +21,9 @@ export const metadata = {
       "Learn how Noo Stop handles contact enquiries through WhatsApp and protects your privacy.",
     images: [{
       url: ogImageUrl,
-      width: 1200,
-      height: 630,
-      type: "image/png",
+      width: 1731,
+      height: 909,
+      type: "image/jpeg",
       alt: "Noo Stop",
     }],
   },
