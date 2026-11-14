@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import CurvedBrush from "@/components/Curved_brush";
+import Curved_brush from "@/components/Curved_brush";
 import { siteConfig } from "@/lib/config/site";
 import {
   ArrowRight,
@@ -162,7 +162,7 @@ const Page = () => {
                 </span>
               </h1>
 
-              <CurvedBrush classes="absolute -bottom-3 left-[25%] h-4 w-[65%] md:-bottom-5 md:h-6 lg:-bottom-6" />
+              <Curved_brush classes="absolute -bottom-3 left-[25%] h-4 w-[65%] md:-bottom-5 md:h-6 lg:-bottom-6" />
             </div>
 
             <h2 className="mt-6 -rotate-[3deg] text-lg font-black italic tracking-[-0.03em] text-white sm:text-2xl md:mt-8 md:text-3xl lg:text-4xl">
@@ -190,7 +190,7 @@ const Page = () => {
                 Our Story
               </h2>
 
-              <CurvedBrush classes="absolute -bottom-3 left-[15%] h-4 w-[75%] md:-bottom-4" />
+              <Curved_brush classes="absolute -bottom-3 left-[15%] h-4 w-[75%] md:-bottom-4" />
 
               {/* Yellow decorative strokes */}
               <svg
@@ -227,7 +227,101 @@ const Page = () => {
           </div>
         </div>
       </section>
+<section className="w-full overflow-hidden px-4 py-10 md:px-8 md:py-14 lg:px-12 lg:py-16">
+      <div className="mx-auto grid max-w-[1200px] items-center gap-8 rounded-[28px] bg-[#F8F6ED] md:gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
+        {/* LEFT IMAGE */}
+        <div className="relative flex justify-center lg:justify-start">
+          {/* image background shape */}
+          <div className="relative w-full max-w-[420px] rounded-[32px] bg-gradient-to-br from-[#123D24] via-[#218A35] to-[#0F2E1B] p-3 shadow-[0_20px_60px_rgba(18,61,36,0.18)] md:max-w-[500px] lg:max-w-[470px]">
+            <div className="relative overflow-hidden rounded-[28px] bg-[#EDE9DB]">
+              <Image
+                src="https://pub-eca4de83e2b44d3d8ef0ecb6fada2a54.r2.dev/Noo%20stop/founder-image.png"
+                alt="Founder of Noo Stop"
+                width={900}
+                height={1100}
+                className="h-auto w-full object-contain"
+                priority={false}
+              />
+            </div>
 
+            {/* small decorative leaf */}
+            <div className="absolute -left-3 top-6 h-16 w-16 rounded-full bg-[#A8E629]/20 blur-md md:h-20 md:w-20" />
+            <div className="absolute -bottom-3 -right-3 h-20 w-20 rounded-full bg-[#F5D91D]/20 blur-md md:h-24 md:w-24" />
+          </div>
+        </div>
+
+        {/* RIGHT CONTENT */}
+        <div className="relative flex flex-col items-start">
+          {/* badge */}
+          <span className="mb-4 inline-flex items-center rounded-full bg-[#F5D91D] px-4 py-2 text-xs font-bold uppercase tracking-[0.08em] text-[#123D24] md:mb-5 md:text-sm">
+            The Person Behind The Brand
+          </span>
+
+          {/* heading */}
+          <div className="relative max-w-[620px]">
+            <h2 className="origin-left -rotate-[2deg] text-4xl font-black italic leading-[0.98] tracking-[-0.05em] text-[#123D24] sm:text-5xl lg:text-6xl">
+              Meet the Vision
+              <br />
+              Behind <span className="text-[#218A35]">Noo Stop.</span>
+            </h2>
+
+            <Curved_brush classes="mt-3 ml-16 h-4 w-[170px] md:ml-24 md:h-5 md:w-[220px]" />
+          </div>
+
+          {/* founder info */}
+          <div className="mt-6 border-l-4 border-[#218A35] pl-4 md:mt-8">
+            <h3 className="text-2xl font-bold text-[#123D24] md:text-3xl">
+              Arshlan Faridi
+            </h3>
+            <p className="mt-1 text-base font-medium text-[#4B5563] md:text-lg">
+              Founder • Noo Stop
+            </p>
+          </div>
+
+          {/* description */}
+          <p className="mt-5 max-w-[580px] text-sm leading-relaxed text-[#4B5563] sm:text-base md:mt-6 md:text-lg">
+            Arshlan Faridi is the driving force behind Noo Stop. With a vision
+            to create a refreshing beverage brand that feels modern, memorable
+            and rooted in taste, he is focused on bringing Noo Stop Zeera to
+            everyday moments with quality, freshness and a strong brand
+            identity.
+          </p>
+
+          {/* quote card */}
+          <div className="mt-6 w-full max-w-[560px] rounded-[22px] border border-[#123D24]/10 bg-white/70 p-5 shadow-sm backdrop-blur-sm md:mt-7 md:p-6">
+            <p className="text-sm italic leading-relaxed text-[#123D24] sm:text-base md:text-lg">
+              “Our goal is simple — to create a drink that feels refreshing,
+              tastes memorable and builds a brand people connect with.”
+            </p>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-6 flex flex-wrap gap-3 md:mt-8">
+            <Link
+              href="/our-product"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#F5D91D] px-6 py-3 text-sm font-bold text-[#123D24] transition-all duration-300 hover:-translate-y-1 hover:bg-[#A8E629] md:text-base"
+            >
+              Explore Our Product
+              <ArrowRight
+                size={18}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
+
+            <Link
+              href="/contact-us"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#123D24] bg-transparent px-6 py-3 text-sm font-bold text-[#123D24] transition-all duration-300 hover:-translate-y-1 hover:bg-[#123D24] hover:text-white md:text-base"
+            >
+              Contact Us
+              <ArrowRight
+                size={18}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
       {/* =========================================
           3. OUR VISION
       ========================================= */}
@@ -337,7 +431,7 @@ const Page = () => {
             What We Stand For
           </h2>
 
-          <CurvedBrush classes="absolute -bottom-5 left-[20%] h-5 w-[65%]" />
+          <Curved_brush classes="absolute -bottom-5 left-[20%] h-5 w-[65%]" />
         </div>
 
         {/* Value Cards */}
