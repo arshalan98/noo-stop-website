@@ -1,6 +1,11 @@
 import LegalPageShell from "@/components/legal/LegalPageShell";
 import { siteConfig } from "@/lib/config/site";
 
+const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+).replace(/\/$/, "");
+const ogImageUrl = new URL("/og-image.png", siteUrl).toString();
+
 export const metadata = {
   title: "Privacy Policy",
   description:
@@ -9,19 +14,25 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "/privacy-policy",
+    url: `${siteUrl}/privacy-policy`,
     siteName: siteConfig.BrandName,
     title: "Privacy Policy | Noo Stop",
     description:
       "Learn how Noo Stop handles contact enquiries through WhatsApp and protects your privacy.",
-    images: [{ url: "/og-image.png", alt: "Noo Stop" }],
+    images: [{
+      url: ogImageUrl,
+      width: 1200,
+      height: 630,
+      type: "image/png",
+      alt: "Noo Stop",
+    }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Privacy Policy | Noo Stop",
     description:
       "Our approach to privacy, contact enquiries and WhatsApp communication.",
-    images: ["/og-image.png"],
+    images: [ogImageUrl],
   },
 };
 

@@ -2,6 +2,11 @@ import React from "react";
 import Contact from "@/components/Contact";
 import { siteConfig } from "@/lib/config/site";
 
+const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+).replace(/\/$/, "");
+const ogImageUrl = new URL("/og-image.png", siteUrl).toString();
+
 export const metadata = {
   title: "Contact Us – Customer Support & Enquiries",
 
@@ -15,14 +20,17 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "/contact-us",
+    url: `${siteUrl}/contact-us`,
     siteName: siteConfig.BrandName,
     title: "Contact Noo Stop – We're Here to Help",
     description:
       "Have questions about Noo Stop Zeera? Reach our team for customer support, product enquiries, feedback and business opportunities.",
     images: [
       {
-        url: "/og-image.png",
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        type: "image/png",
         alt: "Contact Noo Stop – Customer Support and Enquiries",
       },
     ],
@@ -33,13 +41,9 @@ export const metadata = {
     title: "Contact Noo Stop – We're Here to Help",
     description:
       "Get in touch with the Noo Stop team for product enquiries, customer support and business partnerships.",
-    images: ["/og-image.png"],
+    images: [ogImageUrl],
   },
 };
-
-const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
-).replace(/\/$/, "");
 
 const contactJsonLd = {
   "@context": "https://schema.org",

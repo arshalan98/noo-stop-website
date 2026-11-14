@@ -12,6 +12,11 @@ import {
   UsersRound,
   Handshake,
 } from "lucide-react";
+const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+).replace(/\/$/, "");
+const ogImageUrl = new URL("/og-image.png", siteUrl).toString();
+
 export const metadata = {
   title: "About Us – Our Story, Vision & Values",
 
@@ -25,16 +30,17 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "/about-us",
+    url: `${siteUrl}/about-us`,
     siteName: siteConfig.BrandName,
     title: "About Noo Stop – Our Story & Vision",
     description:
       "Get to know Noo Stop, our brand story, vision and values behind the refreshing Noo Stop Zeera beverage.",
     images: [
       {
-        url: "/og-image.png",
+        url: ogImageUrl,
         width: 1200,
         height: 630,
+        type: "image/png",
         alt: "About Noo Stop – Our Story and Vision",
       },
     ],
@@ -45,12 +51,9 @@ export const metadata = {
     title: "About Noo Stop – Our Story & Vision",
     description:
       "Discover the story, vision and values behind Noo Stop, an emerging Indian beverage brand.",
-    images: ["/og-image.png"],
+    images: [ogImageUrl],
   },
 };
-const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
-).replace(/\/$/, "");
 
 const aboutJsonLd = {
   "@context": "https://schema.org",

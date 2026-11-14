@@ -5,6 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import Curved_brush from "@/components/Curved_brush";
 import { siteConfig } from "@/lib/config/site";
+const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+).replace(/\/$/, "");
+const ogImageUrl = new URL("/og-image.png", siteUrl).toString();
+
 export const metadata = {
   title: "Noo Stop Zeera – 160 ml Fizzy Cumin-Flavoured Drink",
 
@@ -18,14 +23,17 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "/our-product",
+    url: `${siteUrl}/our-product`,
     siteName: siteConfig.BrandName,
     title: "Noo Stop Zeera – A Refreshing Fizzy Zeera Drink",
     description:
       "Meet Noo Stop Zeera, a 160 ml carbonated cumin-flavoured beverage. Explore its refreshing taste, product information and packaging.",
     images: [
       {
-        url: "/og-image.png",
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        type: "image/png",
         alt: "Noo Stop Zeera – Fizzy Cumin-Flavoured Beverage",
       },
     ],
@@ -36,13 +44,9 @@ export const metadata = {
     title: "Noo Stop Zeera – Fizzy Cumin-Flavoured Drink",
     description:
       "Discover the refreshing taste of Noo Stop Zeera, a 160 ml fizzy cumin-flavoured beverage.",
-    images: ["/og-image.png"],
+    images: [ogImageUrl],
   },
 };
-
-const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
-).replace(/\/$/, "");
 
 const productJsonLd = {
   "@context": "https://schema.org",

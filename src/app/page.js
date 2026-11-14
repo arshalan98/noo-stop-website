@@ -14,6 +14,7 @@ import { siteConfig } from "@/lib/config/site";
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 ).replace(/\/$/, "");
+const ogImageUrl = new URL("/og-image.png", siteUrl).toString();
 
 export const metadata = {
   title: {
@@ -30,14 +31,17 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "/",
+    url: siteUrl,
     siteName: siteConfig.BrandName,
     title: "Noo Stop – A Refreshing Twist of Zeera",
     description:
       "Discover Noo Stop Zeera, a fizzy cumin-flavoured beverage bringing a refreshing twist to everyday moments.",
     images: [
       {
-        url: "/og-image.png",
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        type: "image/png",
         alt: "Noo Stop Zeera – Fizzy Cumin-Flavoured Drink",
       },
     ],
@@ -48,7 +52,7 @@ export const metadata = {
     title: "Noo Stop – A Refreshing Twist of Zeera",
     description:
       "Meet Noo Stop Zeera, a refreshing fizzy zeera drink crafted for everyday moments.",
-    images: ["/og-image.png"],
+    images: [ogImageUrl],
   },
 };
 const homeJsonLd = {

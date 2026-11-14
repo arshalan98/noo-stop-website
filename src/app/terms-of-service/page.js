@@ -1,6 +1,11 @@
 import LegalPageShell from "@/components/legal/LegalPageShell";
 import { siteConfig } from "@/lib/config/site";
 
+const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+).replace(/\/$/, "");
+const ogImageUrl = new URL("/og-image.png", siteUrl).toString();
+
 export const metadata = {
   title: "Terms of Service",
   description:
@@ -9,18 +14,24 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "/terms-and-conditions",
+    url: `${siteUrl}/terms-and-conditions`,
     siteName: siteConfig.BrandName,
     title: "Terms of Service | Noo Stop",
     description:
       "Understand the terms for using Noo Stop's informational website and contacting our team.",
-    images: [{ url: "/og-image.png", alt: "Noo Stop" }],
+    images: [{
+      url: ogImageUrl,
+      width: 1200,
+      height: 630,
+      type: "image/png",
+      alt: "Noo Stop",
+    }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Terms of Service | Noo Stop",
     description: "Important information about using the Noo Stop website.",
-    images: ["/og-image.png"],
+    images: [ogImageUrl],
   },
 };
 

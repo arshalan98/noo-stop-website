@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
 ).replace(/\/$/, "");
+const ogImageUrl = new URL("/og-image.png", siteUrl).toString();
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -39,13 +40,16 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "/",
+    url: siteUrl,
     siteName: siteConfig.BrandName,
     title: `${siteConfig.BrandName} | ${siteConfig.Tagline}`,
     description: siteConfig.Description,
     images: [
       {
-        url: "/og-image.png",
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        type: "image/png",
         alt: siteConfig.ProductName,
       },
     ],
@@ -55,7 +59,7 @@ export const metadata = {
     card: "summary_large_image",
     title: `${siteConfig.BrandName} | ${siteConfig.Tagline}`,
     description: siteConfig.Description,
-    images: ["/og-image.png"],
+    images: [ogImageUrl],
   },
 
   robots: {
