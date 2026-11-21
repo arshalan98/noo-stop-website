@@ -97,7 +97,7 @@ Business: {
   // Contact Information
   Contact: {
     Email: "noostop870@gmail.com",
-    Phone: "917819928700", // TODO: Customer care number
+    Phone: "7819928700", // TODO: Customer care number
     WhatsApp: "917819928700", // TODO: 91XXXXXXXXXX
     WhatsAppMessage:
       "Hello Noo Stop, I would like to know more about Noo Stop Zeera.",

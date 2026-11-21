@@ -177,7 +177,7 @@ ${message}`;
                 href={`tel:${phone.replace(/[^\d+]/g, "")}`}
                 className="rounded-full bg-[#F5D91D] px-4 py-2 text-xs font-bold text-[#123D24] md:text-sm"
               >
-                {phone}
+                +91{phone}
               </a>
             ) : (
               <span className="rounded-full bg-[#F5D91D] px-4 py-2 text-xs font-semibold text-[#123D24]">
